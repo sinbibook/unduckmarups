@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* Theme CSS — t-template-H  (원본 udosky.kr / 대조 gpcaravan.co.kr)
+   standalone 은 이 값을 그대로 쓰고, 백오피스 preview 는 theme customFields 로
+   덮어쓴다 (주입: js/preview-handler.js).
+   토큰 값은 하나씩만 둔다 — 폴백은 사용처에서 붙인다.
+   사용처 전수 조사와 하드코딩으로 남긴 값은 data-mapping.md 「테마 색상/폰트」 참고. */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+  /* 밝은 바탕 면 4곳 */
+  --color-primary: #f5f6f8;
+
+  /* 브랜드 포인트 10곳. 두 원본이 갈리는 유일한 축 (gpcaravan 은 #8eb049)
+     ⚠️ 밝은 색으로 바꾸면 이 면들 위의 흰 글자가 사라진다 */
+  --color-secondary: #0187cc;
+
+  /* 영문 전체 16곳 — 로고 · 메뉴 · 모든 제목과 라벨
+     사용처는 var(--font-en-main), Arial, Helvetica, sans-serif 로 폴백을 붙인다 */
+  --font-en-main: 'Oswald';
+
+  /* 한글 본문 — reset.css 전역(본문·폼) + .logo_sub + .ff_notokr */
+  --font-ko-main: 'Noto Sans KR';
+
+  /* 설명 문단 15곳 — 섹션 리드 / 소개문 / 이용안내 / 여행지 설명 등
+     업주가 입력한 서술형 텍스트가 들어가는 자리다.
+     기본값을 ko-main 과 같게 두어 아무것도 고르지 않으면 화면이 한 서체로 보이고,
+     백오피스에서 koSub 를 고르면 그 자리들만 갈린다. */
+  --font-ko-sub: 'Noto Sans KR';
+}
